@@ -1,9 +1,28 @@
-#!/usr/bin/python3
-import random
-number = random.randint(-10, 10)
-if number > 0:
-    print("{0:d} is positive".format(number))
-elif number < 0:
-    print("{:d} is negative".format(number))
-else:
-    print("{:d} is zero".format(number))
+#include <stdlib.h>
+#include <time.h>
+#include <stdio.h>
+
+/**
+ * main - entry point
+ *
+ * Return:always return 0
+ *
+ */
+int main(void)
+{
+	int n;
+
+	srand(time(0));
+	n = rand() - RAND_MAX / 2;
+	if (n < 0)
+	{
+		printf("%d is negative\n", n);
+	} else if (n == 0)
+	{
+		printf("%d is zero\n", n);
+	} else
+	{
+		printf("%d is positive\n", n);
+	}
+	return (0);
+}
